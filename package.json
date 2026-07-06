@@ -29,11 +29,17 @@
   "scripts": {
     "build": "node build/style-dictionary.config.mjs && node build/copy-assets.mjs",
     "changeset": "changeset",
-    "release": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish",
+    "storybook": "npm run build && storybook dev -p 6006",
+    "build-storybook": "npm run build && storybook build -o storybook-static"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
-    "style-dictionary": "^4.4.0"
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/html-vite": "^10.4.6",
+    "storybook": "^10.4.6",
+    "style-dictionary": "^4.4.0",
+    "vite": "^8.1.3"
   },
   "homepage": "https://github.com/Kaynshin/optiond-design-system#readme",
   "bugs": {

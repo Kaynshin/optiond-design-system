@@ -5,3 +5,4 @@ dist/
 .changeset/*.md
 !.changeset/README.md
 .claude/
+storybook-static/
