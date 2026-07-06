@@ -1,0 +1,48 @@
+/* Storybook-only presentation chrome for the Signatures organism — the "frame"
+   simulating an email thread context around the (unstyled-by-us) HTML table. */
+
+.sig-frame {
+  border: 1px solid var(--od-color-hairline-dark);
+  border-radius: var(--od-radius-16);
+  padding: 40px;
+  background-size: 20px 20px;
+  transition: background-color 0.2s;
+}
+.sig-frame[data-bg='dark'] {
+  background-color: #1b1b1b;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.045) 1px, transparent 0);
+}
+.sig-frame[data-bg='light'] {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+}
+.sig-mailctx {
+  font-family: var(--od-font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 26px;
+  max-width: 60ch;
+}
+.sig-frame[data-bg='dark'] .sig-mailctx {
+  color: #9a9a9a;
+}
+.sig-frame[data-bg='light'] .sig-mailctx {
+  color: #6b6b6b;
+}
+.sig-mailctx .sep {
+  display: block;
+  height: 1px;
+  margin-top: 20px;
+}
+.sig-frame[data-bg='dark'] .sig-mailctx .sep {
+  background: #333;
+}
+.sig-frame[data-bg='light'] .sig-mailctx .sep {
+  background: #e3e3e3;
+}
+.sig-meta {
+  font-family: var(--od-font-mono);
+  font-size: 11px;
+  color: var(--od-color-text-muted);
+  margin-top: 14px;
+}

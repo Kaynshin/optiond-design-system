@@ -75,3 +75,21 @@ Alias sémantiques qui basculent entre thèmes (`--od-color-canvas`, `--od-color
 ## Catalog
 
 Vitrine statique des tokens et primitives : [`catalog/index.html`](./catalog/index.html) (ouvrir directement dans un navigateur, importe `../dist/option-d.css`).
+
+## Storybook
+
+Vue d'ensemble interactive de chaque composant (Atomic Design : foundations, atoms,
+molecules, organisms — Hero, Bannières, Signatures email, Avatars), avec toggle de
+thème light/dark et controls par composant.
+
+```bash
+npm run storybook
+```
+
+Ouvre `http://localhost:6006`. Le script build d'abord `dist/` (les stories en dépendent).
+
+Déployé automatiquement sur GitHub Pages à chaque push sur `main` touchant
+`stories/`, `.storybook/`, `dist/`, `tokens/` ou `build/` :
+**https://kaynshin.github.io/optiond-design-system/**
+
+`npm run build-storybook` génère `storybook-static/` (gitignored, exclu du package publié).

@@ -1,0 +1,39 @@
+/* Storybook-only helpers for Atoms stories.
+   Reuses --od-* tokens; extends dist/option-d.css with a few demo affordances
+   (forced hover/focus state controls, dot badge) without touching the published CSS. */
+
+/* ---------- Button: disabled dimming across all variants (only .od-btn--primary
+   ships a bespoke :disabled rule in dist/option-d.css) + forced "hover" state for
+   the Storybook `state` control (real :hover only fires on pointer interaction). */
+.od-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.od-btn[data-force-state='hover'].od-btn--primary { background: var(--od-color-primary-active); }
+.od-btn[data-force-state='hover'].od-btn--secondary-dark { background: var(--od-color-surface-elevated); }
+.od-btn[data-force-state='hover'].od-btn--secondary-light { background: var(--od-color-hairline-light); }
+.od-btn[data-force-state='hover'].od-btn--icon { background: var(--od-color-surface-elevated); }
+.od-btn[data-force-state='hover'].od-btn--link { text-decoration: underline; }
+
+/* ---------- Input: forced "focus" state for the Storybook `state` control. */
+.od-input[data-force-focus='true'] {
+  outline: none;
+  border-color: var(--od-color-primary);
+}
+
+/* ---------- Badge: "dot" variant (status indicator), not in the published CSS —
+   single accent invariant preserved: the dot is either magenta (active) or
+   muted-on-dark (inactive), never a second hue. */
+.od-badge--dot {
+  background: var(--od-color-surface-elevated);
+  color: var(--od-color-on-dark);
+  border: 1px solid var(--od-color-hairline-strong-dark);
+}
+.od-badge--dot .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--od-radius-circle);
+  background: var(--dot-color, var(--od-color-primary));
+  flex: none;
+}

@@ -6,6 +6,18 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/), versioning [Se
 
 ## [Non publié]
 
+### Ajouté
+- Storybook (`@storybook/html-vite` + `@storybook/addon-a11y`, devDependencies) : vitrine
+  interactive Atomic Design du design system — Foundations (intro, colors, typography,
+  radii, hairlines), Atoms (Button, Input, Badge, Wordmark, Signature), Molecules
+  (Input+Label, Button group, Card/Surface), Organisms (Hero, Bannières — Halo/Monogramme/
+  Slash × 5 formats, Signatures email — Halo/Slash/Ligne/Cream, Avatars — 15 variantes
+  Signature/App icon + Photo). Décorateur global de thème light/dark (`data-theme`).
+  Déploiement automatique sur GitHub Pages via `.github/workflows/storybook.yml`
+  (`https://kaynshin.github.io/optiond-design-system/`). Le package publié (`files:["dist"]`)
+  reste inchangé — Storybook est exclusivement en devDependencies + dossiers
+  `.storybook/`/`stories/`. Voir `docs/superpowers/specs/2026-07-06-storybook-design.md`.
+
 ## [0.1.0] - 2026-07-06
 
 Première version publiée sur npm : https://www.npmjs.com/package/option-d-design-system
