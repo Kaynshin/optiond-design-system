@@ -6,3 +6,4 @@ dist/
 !.changeset/README.md
 .claude/
 storybook-static/
+.gstack/

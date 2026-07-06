@@ -128,7 +128,7 @@ export function buildAvatarSVG(cfg, shapeOverride) {
   const clipId = 'cl-' + uid;
   const defs = `<clipPath id="${clipId}">${shapePath(shape)}/></clipPath>`;
   const bg = baseShape(cfg.bg, shape);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800"><defs>${defs}</defs>${bg}${ringSVG(cfg, shape)}${markSVG(cfg)}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%" style="display:block" preserveAspectRatio="xMidYMid meet"><defs>${defs}</defs>${bg}${ringSVG(cfg, shape)}${markSVG(cfg)}</svg>`;
 }
 
 /* ---- Photo family placeholder — no real portrait asset ships with the design
@@ -151,5 +151,5 @@ export function buildPhotoPlaceholderSVG(photo, shapeOverride) {
       <circle cx="400" cy="330" r="140" fill="#4A4A4A"/>
       <ellipse cx="400" cy="760" rx="260" ry="220" fill="#4A4A4A"/>
     </g>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800"><defs>${clip}</defs>${silhouette}${ringSVG({ fg: FF.magenta }, shape)}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%" style="display:block" preserveAspectRatio="xMidYMid meet"><defs>${clip}</defs>${silhouette}${ringSVG({ fg: FF.magenta }, shape)}</svg>`;
 }
