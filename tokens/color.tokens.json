@@ -1,0 +1,37 @@
+{
+  "color": {
+    "primary": { "$value": "#FF006E", "$type": "color", "$description": "Unique brand accent. No secondary accent color exists." },
+    "primary-active": { "$value": "#E6005C", "$type": "color", "$description": "Hover/active state of primary. Not a second accent." },
+    "primary-disabled": { "$value": "#3D0019", "$type": "color", "$description": "Disabled state of primary." },
+    "on-primary": { "$value": "#FFFFFF", "$type": "color" },
+
+    "canvas-light": { "$value": "#FFFFFF", "$type": "color" },
+    "canvas-dark": { "$value": "#0A0A0A", "$type": "color" },
+    "canvas-pure-black": { "$value": "#000000", "$type": "color", "$description": "Reserved for hero/lockup halo backgrounds." },
+    "cream": { "$value": "#F5F1EA", "$type": "color" },
+    "ink": { "$value": "#0A0A0A", "$type": "color" },
+
+    "surface-soft": { "$value": "#121212", "$type": "color" },
+    "surface-card": { "$value": "#1A1A1A", "$type": "color" },
+    "surface-elevated": { "$value": "#242424", "$type": "color" },
+
+    "on-dark": { "$value": "#FFFFFF", "$type": "color" },
+    "body-on-dark": { "$value": "#CCCCCC", "$type": "color" },
+    "body-strong": { "$value": "#E6E6E6", "$type": "color" },
+    "muted-on-dark": { "$value": "#888888", "$type": "color" },
+    "muted-soft-on-dark": { "$value": "#5A5A5A", "$type": "color" },
+
+    "body-on-light": { "$value": "#3A3A3A", "$type": "color" },
+    "body-soft-on-light": { "$value": "#666666", "$type": "color" },
+    "muted-on-light": { "$value": "#75758A", "$type": "color" },
+
+    "hairline-light": { "$value": "#E5E5E5", "$type": "color" },
+    "hairline-strong-light": { "$value": "#D0D0D0", "$type": "color" },
+    "hairline-dark": { "$value": "#2A2A2A", "$type": "color" },
+    "hairline-strong-dark": { "$value": "#3A3A3A", "$type": "color" },
+
+    "success": { "$value": "#22C55E", "$type": "color" },
+    "warning": { "$value": "#F59E0B", "$type": "color" },
+    "error": { "$value": "#EF4444", "$type": "color" }
+  }
+}
