@@ -1,0 +1,34 @@
+{
+  "font": {
+    "sans": { "$value": "'Geist','Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif", "$type": "fontFamily" },
+    "mono": { "$value": "'Geist Mono','JetBrains Mono',ui-monospace,'SF Mono',monospace", "$type": "fontFamily" },
+    "weight": {
+      "regular": { "$value": 400, "$type": "fontWeight" },
+      "medium": { "$value": 500, "$type": "fontWeight" },
+      "semibold": { "$value": 600, "$type": "fontWeight" },
+      "bold": { "$value": 700, "$type": "fontWeight" }
+    }
+  },
+  "fontSize": {
+    "10": { "$value": "10px", "$type": "dimension" },
+    "11": { "$value": "11px", "$type": "dimension" },
+    "12": { "$value": "12px", "$type": "dimension" },
+    "13": { "$value": "13px", "$type": "dimension" },
+    "14": { "$value": "14px", "$type": "dimension" },
+    "15": { "$value": "15px", "$type": "dimension" },
+    "16": { "$value": "16px", "$type": "dimension" },
+    "18": { "$value": "18px", "$type": "dimension" },
+    "20": { "$value": "20px", "$type": "dimension" },
+    "24": { "$value": "24px", "$type": "dimension" },
+    "32": { "$value": "32px", "$type": "dimension" },
+    "40": { "$value": "40px", "$type": "dimension" },
+    "48": { "$value": "48px", "$type": "dimension" },
+    "56": { "$value": "56px", "$type": "dimension" },
+    "64": { "$value": "64px", "$type": "dimension" },
+    "72": { "$value": "72px", "$type": "dimension" },
+    "80": { "$value": "80px", "$type": "dimension" },
+    "88": { "$value": "88px", "$type": "dimension" },
+    "96": { "$value": "96px", "$type": "dimension" },
+    "120": { "$value": "120px", "$type": "dimension" }
+  }
+}
