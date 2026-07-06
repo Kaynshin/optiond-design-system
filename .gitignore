@@ -4,3 +4,4 @@ dist/
 *.log
 .changeset/*.md
 !.changeset/README.md
+.claude/
