@@ -1,0 +1,9 @@
+{
+  "effect": {
+    "halo": {
+      "soft": { "$value": "rgba(255, 0, 110, 0.10)", "$type": "color", "$description": "Reserved for the hero background radial gradient." },
+      "medium": { "$value": "rgba(255, 0, 110, 0.14)", "$type": "color", "$description": "Reserved for the hero background radial gradient." },
+      "strong": { "$value": "rgba(255, 0, 110, 0.18)", "$type": "color", "$description": "Reserved for the hero background radial gradient." }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+/* Option/D primitives — hand-ported from the source bundle, prefixed `od-`, wired to
+   generated --od-* variables (see dist/_od-tokens.css). Source: primitives-raw.css (71 rules)
+   from "Design System Option D (standalone).html". Halo is reserved to .od-hero only. */
+
+::selection{background:var(--od-color-primary);color:var(--od-color-on-primary)}
+
+/* ---------- Hero ---------- */
+.od-hero{
+  position:relative;
+  min-height:560px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--od-color-canvas-pure-black);
+  overflow:hidden;
+  text-align:center;
+  padding:var(--od-space-24) var(--od-space-6);
+}
+.od-hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 90% 70% at center, var(--od-effect-halo-medium) 0%, rgba(200,0,90,0.04) 35%, transparent 70%);
+  pointer-events:none;
+}
+.od-hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:22px}
+
+/* ---------- Wordmark ---------- */
+/* "Option/D": "Option" inherits the surrounding text color, "/" and "D" are always the
+   magenta accent — never the text color. Use <span class="od-wordmark__accent"> around both. */
+.od-wordmark{
+  font-family:var(--od-font-sans);
+  font-weight:var(--od-font-weight-bold);
+  font-size:var(--od-font-size-32);
+  letter-spacing:-0.04em;
+  line-height:1;
+}
+.od-wordmark__accent{color:var(--od-color-primary)}
+/* Larger scale automatically inside the hero, matching the source bundle's wordmark-hero rule. */
+.od-hero .od-wordmark{
+  font-size:clamp(72px, 11vw, 160px);
+  letter-spacing:-0.06em;
+}
+
+/* ---------- Signature ---------- */
+/* "— DAVID · DIGITAL —" — two terms only. This is a signature lockup, distinct from the
+   bundle's "David/Design/Digital" narrative storytelling copy. */
+.od-signature{
+  display:inline-block;
+  font-family:var(--od-font-mono);
+  font-size:var(--od-font-size-11);
+  font-weight:var(--od-font-weight-medium);
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  opacity:0.62;
+}
+
+/* ---------- Buttons ---------- */
+.od-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:40px;padding:0 20px;border-radius:var(--od-radius-8);
+  font-family:var(--od-font-sans);font-size:var(--od-font-size-14);font-weight:var(--od-font-weight-semibold);
+  border:none;cursor:pointer;line-height:1;
+  transition:background-color .15s ease;
+}
+.od-btn--primary{background:var(--od-color-primary);color:var(--od-color-on-primary)}
+.od-btn--primary:hover{background:var(--od-color-primary-active)}
+.od-btn--primary:disabled{background:var(--od-color-primary-disabled);color:var(--od-color-muted-on-dark);cursor:not-allowed}
+.od-btn--secondary-dark{background:var(--od-color-surface-card);color:var(--od-color-on-dark);border:1px solid var(--od-color-hairline-strong-dark)}
+.od-btn--secondary-light{background:var(--od-color-canvas-light);color:var(--od-color-ink);border:1px solid var(--od-color-hairline-strong-light)}
+.od-btn--icon{width:36px;height:36px;padding:0;border-radius:var(--od-radius-circle);background:var(--od-color-surface-card);color:var(--od-color-on-dark);border:1px solid var(--od-color-hairline-strong-dark)}
+.od-btn--link{background:transparent;color:var(--od-color-primary);padding:0;height:auto}
+
+/* ---------- Inputs ---------- */
+.od-input{
+  height:40px;padding:0 14px;border-radius:var(--od-radius-8);
+  background:var(--od-color-surface-card);color:var(--od-color-on-dark);
+  border:1px solid var(--od-color-hairline-strong-dark);
+  font-family:var(--od-font-sans);font-size:var(--od-font-size-14);
+  width:100%;
+}
+.od-input:focus{outline:none;border-color:var(--od-color-primary)}
+.od-input-label{
+  font-family:var(--od-font-mono);font-size:var(--od-font-size-11);letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--od-color-muted-on-dark);margin-bottom:8px;display:block;
+}
+
+/* ---------- Surfaces ---------- */
+.od-surface{background:var(--od-color-surface-soft);border:1px solid var(--od-color-hairline-dark);border-radius:var(--od-radius-12)}
+.od-card{background:var(--od-color-surface-card);border:1px solid var(--od-color-hairline-dark);border-radius:var(--od-radius-12);overflow:hidden}
+.od-surface--elevated{background:var(--od-color-surface-elevated);border:1px solid var(--od-color-hairline-strong-dark);border-radius:var(--od-radius-12)}
+
+/* ---------- Badges ---------- */
+.od-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:var(--od-radius-pill);
+  font-size:var(--od-font-size-13);font-weight:var(--od-font-weight-medium);line-height:1.4;
+}
+.od-badge--pill{background:var(--od-color-surface-elevated);color:var(--od-color-on-dark);border:1px solid var(--od-color-hairline-strong-dark)}
+.od-badge--magenta{
+  background:var(--od-color-primary);color:var(--od-color-on-primary);
+  font-family:var(--od-font-mono);font-size:var(--od-font-size-11);font-weight:var(--od-font-weight-medium);letter-spacing:1.8px;text-transform:uppercase;
+  padding:5px 12px;
+}
