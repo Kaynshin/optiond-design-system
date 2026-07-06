@@ -1,6 +1,36 @@
 {
   "name": "option-d-design-system",
   "version": "0.1.0",
+  "description": "Option/D design system: framework-agnostic design tokens, CSS, and Tailwind preset. Zero runtime dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kaynshin/optiond-design-system"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/tokens.js",
+  "types": "./dist/tokens.d.ts",
+  "style": "dist/option-d.css",
+  "exports": {
+    ".": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./css": "./dist/option-d.css",
+    "./tailwind": "./dist/tailwind-preset.js",
+    "./fonts/*": "./dist/fonts/*"
+  },
+  "scripts": {
+    "build": "node build/style-dictionary.config.mjs && node build/copy-assets.mjs",
+    "changeset": "changeset",
+    "release": "npm run build && changeset publish"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
     "style-dictionary": "^4.4.0"
