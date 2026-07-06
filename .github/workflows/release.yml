@@ -16,8 +16,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -36,12 +34,28 @@ jobs:
       - name: Build package
         run: npm run build
 
+      # Detecte la presence du secret NPM_TOKEN sans l'exposer aux autres etapes.
+      # Le token n'est en env que dans cette etape (qui teste seulement s'il est
+      # non vide et ne le forwarde pas) et dans l'etape publish. Il n'est PAS
+      # visible pendant npm ci / npm run build, ce qui evite qu'un postinstall
+      # compromis puisse l'exfiltrer.
+      - name: Check NPM_TOKEN presence
+        id: npmtoken
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # Publie seulement si le secret NPM_TOKEN est configure. Sans token, on ne
       # tente pas de publier (evite un E404 non authentifie a chaque push vers
       # main). Avec des changesets en attente, l'action ouvre a la place une PR
       # "Version Packages" au lieu de publier immediatement.
       - name: Create release PR or publish to npm
-        if: ${{ env.NPM_TOKEN != '' }}
+        if: ${{ steps.npmtoken.outputs.present == 'true' }}
         uses: changesets/action@v1
         with:
           publish: npm run release
@@ -52,5 +66,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Skip publish (no NPM_TOKEN)
-        if: ${{ env.NPM_TOKEN == '' }}
+        if: ${{ steps.npmtoken.outputs.present == 'false' }}
         run: echo "NPM_TOKEN absent, publication ignoree. Ajouter le secret NPM_TOKEN pour publier sur npm."
