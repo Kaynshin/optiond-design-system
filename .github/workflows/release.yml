@@ -16,6 +16,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -34,9 +36,12 @@ jobs:
       - name: Build package
         run: npm run build
 
-      # On a push to main: if there are pending changesets, open/update a "Version Packages" PR.
-      # If a changeset was already merged (no pending changesets), this step publishes to npm.
+      # Publie seulement si le secret NPM_TOKEN est configure. Sans token, on ne
+      # tente pas de publier (evite un E404 non authentifie a chaque push vers
+      # main). Avec des changesets en attente, l'action ouvre a la place une PR
+      # "Version Packages" au lieu de publier immediatement.
       - name: Create release PR or publish to npm
+        if: ${{ env.NPM_TOKEN != '' }}
         uses: changesets/action@v1
         with:
           publish: npm run release
@@ -44,3 +49,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Skip publish (no NPM_TOKEN)
+        if: ${{ env.NPM_TOKEN == '' }}
+        run: echo "NPM_TOKEN absent, publication ignoree. Ajouter le secret NPM_TOKEN pour publier sur npm."
