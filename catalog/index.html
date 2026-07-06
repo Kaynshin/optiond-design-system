@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Option/D — Design System Catalog</title>
+<link rel="stylesheet" href="../dist/option-d.css" />
+<style>
+  body{margin:0;background:var(--od-color-canvas);color:var(--od-color-text);font-family:var(--od-font-sans);}
+  .catalog-section{padding:var(--od-space-16) var(--od-space-6);border-bottom:1px solid var(--od-color-hairline);}
+  .catalog-section h2{font-family:var(--od-font-mono);font-size:var(--od-font-size-13);text-transform:uppercase;letter-spacing:0.12em;color:var(--od-color-text-muted);margin:0 0 var(--od-space-6);}
+  .catalog-row{display:flex;gap:var(--od-space-6);flex-wrap:wrap;align-items:flex-start;}
+  .catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--od-space-4);}
+  .swatch{border:1px solid var(--od-color-hairline);border-radius:var(--od-radius-8);overflow:hidden;}
+  .swatch .chip{height:64px;}
+  .swatch .meta{padding:var(--od-space-2) var(--od-space-3);font-family:var(--od-font-mono);font-size:var(--od-font-size-11);}
+  .type-row{display:flex;align-items:baseline;gap:var(--od-space-4);padding:var(--od-space-2) 0;border-bottom:1px dashed var(--od-color-hairline);}
+  .type-row span.label{font-family:var(--od-font-mono);font-size:var(--od-font-size-11);color:var(--od-color-text-muted);width:64px;flex:none;}
+  .catalog-hero-demo{margin-bottom:0;}
+  .theme-tile{padding:var(--od-space-8);border-radius:var(--od-radius-12);}
+  .theme-tile.light{background:var(--od-color-canvas-light);color:var(--od-color-body-on-light);border:1px solid var(--od-color-hairline-light);}
+  .theme-tile.dark{background:var(--od-color-canvas-dark);color:var(--od-color-on-dark);}
+  h1{font-family:var(--od-font-sans);}
+</style>
+</head>
+<body>
+
+<header class="catalog-section" style="border-bottom:1px solid var(--od-color-hairline);">
+  <p class="od-wordmark" style="font-size:var(--od-font-size-40);">Option<span class="od-wordmark__accent">/</span><span class="od-wordmark__accent">D</span></p>
+  <p class="od-t-16">Design System catalog — storybook statique, autonome (n'importe que <code>../dist/option-d.css</code>).</p>
+</header>
+
+<!-- HERO with reserved halo -->
+<section class="od-hero catalog-hero-demo">
+  <div class="od-hero-inner">
+    <p class="od-wordmark" style="color:#fff;">Option<span class="od-wordmark__accent">/</span><span class="od-wordmark__accent">D</span></p>
+    <p class="od-signature" style="color:#fff;">— DAVID · DIGITAL —</p>
+  </div>
+</section>
+
+<section class="catalog-section">
+  <h2>Accent</h2>
+  <div class="catalog-row">
+    <div class="swatch">
+      <div class="chip" style="background:var(--od-color-primary);"></div>
+      <div class="meta">primary · #FF006E</div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--od-color-primary-active);"></div>
+      <div class="meta">primary-active · #E6005C</div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--od-color-primary-disabled);"></div>
+      <div class="meta">primary-disabled · #3D0019</div>
+    </div>
+  </div>
+  <p class="od-t-14" style="color:var(--od-color-text-muted);max-width:60ch;">
+    Accent unique magenta, pas de bichromie. primary-active / primary-disabled sont des états, jamais un second accent.
+  </p>
+</section>
+
+<section class="catalog-section">
+  <h2>Fonts</h2>
+  <p class="od-sans od-t-24" style="font-weight:var(--od-font-weight-bold);">The quick brown fox jumps over the lazy dog — Geist</p>
+  <p class="od-mono od-t-16">The quick brown fox jumps over the lazy dog — Geist Mono</p>
+  <p class="od-mono od-t-14" style="color:var(--od-color-text-muted);">0123456789 · AaBbCc · Geist / Geist Mono, self-hosted (woff2, unicode-range subset)</p>
+</section>
+
+<section class="catalog-section">
+  <h2>Échelle typographique</h2>
+  <div class="type-row"><span class="label">10</span><span class="od-t-10">Option/D</span></div>
+  <div class="type-row"><span class="label">12</span><span class="od-t-12">Option/D</span></div>
+  <div class="type-row"><span class="label">14</span><span class="od-t-14">Option/D</span></div>
+  <div class="type-row"><span class="label">16</span><span class="od-t-16">Option/D</span></div>
+  <div class="type-row"><span class="label">20</span><span class="od-t-20">Option/D</span></div>
+  <div class="type-row"><span class="label">24</span><span class="od-t-24">Option/D</span></div>
+  <div class="type-row"><span class="label">32</span><span class="od-t-32">Option/D</span></div>
+  <div class="type-row"><span class="label">40</span><span class="od-t-40">Option/D</span></div>
+  <div class="type-row"><span class="label">48</span><span class="od-t-48">Option/D</span></div>
+  <div class="type-row"><span class="label">64</span><span class="od-t-64">Option/D</span></div>
+  <div class="type-row"><span class="label">96</span><span class="od-t-96">Option/D</span></div>
+  <div class="type-row"><span class="label">120</span><span class="od-t-120">Option/D</span></div>
+</section>
+
+<section class="catalog-section">
+  <h2>Canvas &amp; thèmes</h2>
+  <div class="catalog-row">
+    <div class="theme-tile light">
+      <p class="od-t-14" style="color:var(--od-color-text-muted);margin:0 0 8px;">light (défaut)</p>
+      <p class="od-wordmark">Option<span class="od-wordmark__accent">/</span><span class="od-wordmark__accent">D</span></p>
+    </div>
+    <div class="theme-tile dark od-dark">
+      <p class="od-t-14" style="color:var(--od-color-text-muted);margin:0 0 8px;">dark (.od-dark)</p>
+      <p class="od-wordmark">Option<span class="od-wordmark__accent">/</span><span class="od-wordmark__accent">D</span></p>
+    </div>
+  </div>
+  <div class="od-hero" style="margin-top:var(--od-space-6);min-height:220px;">
+    <div class="od-hero-inner">
+      <p class="od-t-14" style="color:rgba(255,255,255,.62);font-family:var(--od-font-mono);text-transform:uppercase;letter-spacing:.2em;">dark + halo (hero réservé)</p>
+    </div>
+  </div>
+</section>
+
+<section class="catalog-section">
+  <h2>Surfaces</h2>
+  <div class="catalog-row od-dark" style="padding:var(--od-space-6);border-radius:var(--od-radius-12);">
+    <div class="od-surface" style="padding:var(--od-space-4);width:200px;">od-surface</div>
+    <div class="od-card" style="padding:var(--od-space-4);width:200px;">od-card</div>
+    <div class="od-surface--elevated" style="padding:var(--od-space-4);width:200px;">od-surface--elevated</div>
+  </div>
+</section>
+
+<section class="catalog-section">
+  <h2>Wordmark</h2>
+  <p class="od-wordmark" style="font-size:var(--od-font-size-64);">Option<span class="od-wordmark__accent">/</span><span class="od-wordmark__accent">D</span></p>
+  <p class="od-t-14" style="color:var(--od-color-text-muted);">"/" et "D" toujours magenta, jamais la couleur du texte environnant.</p>
+</section>
+
+<section class="catalog-section od-dark" style="text-align:center;">
+  <h2 style="text-align:left;">Signature</h2>
+  <p class="od-signature">— DAVID · DIGITAL —</p>
+</section>
+
+<section class="catalog-section od-dark">
+  <h2>Boutons</h2>
+  <div class="catalog-row">
+    <button class="od-btn od-btn--primary">Primary</button>
+    <button class="od-btn od-btn--primary" disabled>Primary disabled</button>
+    <button class="od-btn od-btn--secondary-dark">Secondary dark</button>
+    <button class="od-btn od-btn--secondary-light">Secondary light</button>
+    <button class="od-btn od-btn--icon" aria-label="Icône">i</button>
+    <button class="od-btn od-btn--link">Link button</button>
+  </div>
+</section>
+
+<section class="catalog-section od-dark">
+  <h2>Inputs</h2>
+  <div style="max-width:320px;">
+    <label class="od-input-label" for="catalog-input">Label</label>
+    <input class="od-input" id="catalog-input" type="text" placeholder="Placeholder" />
+  </div>
+</section>
+
+<section class="catalog-section od-dark">
+  <h2>Badges</h2>
+  <div class="catalog-row">
+    <span class="od-badge od-badge--pill">Pill badge</span>
+    <span class="od-badge od-badge--magenta">Magenta badge</span>
+  </div>
+</section>
+
+</body>
+</html>
