@@ -93,3 +93,27 @@ Déployé automatiquement sur GitHub Pages à chaque push sur `main` touchant
 **https://kaynshin.github.io/optiond-design-system/**
 
 `npm run build-storybook` génère `storybook-static/` (gitignored, exclu du package publié).
+
+## Tests
+
+Tests unitaires des composants (render/builders des stories) avec Vitest + happy-dom.
+
+```bash
+npm test          # une passe
+npm run test:watch
+```
+
+Chaque composant a un fichier sous `test/` (atoms, molecules, organisms) plus
+`test/invariants.test.js` qui verrouille les invariants de marque (accent magenta unique,
+wordmark `/` et `D` magenta, signature à deux termes). Les tests tournent en CI sur chaque
+push / PR (`.github/workflows/test.yml`). Les dépendances de test sont en devDependencies et
+n'entrent pas dans le package publié.
+
+## Ajouter un composant
+
+1. Créer la story `stories/<foundations|atoms|molecules|organisms>/<Composant>.stories.js`
+   (HTML pur, consomme les classes `.od-*` / variables `--od-*`).
+2. Ajouter le test `test/<niveau>/<composant>.test.js` couvrant ses variantes et les
+   invariants de marque concernés.
+3. `npm run storybook` (rendu local) et `npm test` (vert).
+4. PR `feature/*` → `dev` → `main`. Le merge sur `main` redéploie le Storybook sur Pages.
