@@ -17,6 +17,15 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/), versioning [Se
   (`https://kaynshin.github.io/optiond-design-system/`). Le package publié (`files:["dist"]`)
   reste inchangé — Storybook est exclusivement en devDependencies + dossiers
   `.storybook/`/`stories/`. Voir `docs/superpowers/specs/2026-07-06-storybook-design.md`.
+- Tests unitaires des composants (Vitest + happy-dom, devDependencies) : 144 tests, un
+  fichier par composant sous `test/` + `test/invariants.test.js` (accent magenta unique,
+  wordmark `/D` magenta, signature deux termes). Job CI `.github/workflows/test.yml`
+  (`npm test` sur push / PR). Voir `docs/decisions/0003-storybook-and-testing.md`.
+
+### Corrigé
+- Storybook / Avatars : le SVG des avatars émettait `width`/`height="800"` en dur et
+  débordait de son conteneur (avatars géants qui se chevauchaient). Passé en
+  `width`/`height="100%"` + `preserveAspectRatio` ; test de non-régression ajouté.
 
 ## [0.1.0] - 2026-07-06
 
